@@ -1,6 +1,7 @@
 package com.programming.techie.springngblog.model;
 
 import javax.persistence.*;
+import javax.validation.constraints.NotNull;
 
 @Entity
 @Table
@@ -9,6 +10,7 @@ public class User {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     @Column
+    @NotNull
     private String userName;
     @Column
     private String password;

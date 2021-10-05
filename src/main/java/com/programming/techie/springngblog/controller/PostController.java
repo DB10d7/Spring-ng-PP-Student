@@ -1,7 +1,7 @@
 package com.programming.techie.springngblog.controller;
 
 import com.programming.techie.springngblog.dto.PostDto;
-import com.programming.techie.springngblog.security.PostService;
+import com.programming.techie.springngblog.service.PostService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;

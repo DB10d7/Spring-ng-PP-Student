@@ -1,4 +1,4 @@
-package com.programming.techie.springngblog.security;
+package com.programming.techie.springngblog.service;
 
 import com.programming.techie.springngblog.dto.PostDto;
 import com.programming.techie.springngblog.exception.PostNotFoundException;
