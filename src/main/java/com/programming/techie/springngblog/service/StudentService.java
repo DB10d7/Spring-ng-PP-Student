@@ -41,12 +41,24 @@ public class StudentService {
         studentDto.setStudentId(student.getStudentId());
         studentDto.setStudentName(student.getStudentName());
         studentDto.setStudentEmail(student.getStudentEmail());
+        studentDto.setName(student.getName());
+        studentDto.setFatherName(student.getFatherName());
+        studentDto.setBatch(student.getBatch());
+        studentDto.setAge(student.getAge());
+        studentDto.setNumber(student.getNumber());
+        studentDto.setPassOutYear(student.getPassOutYear());
         return studentDto;
     }
     private Student mapFromDtoToStudent(StudentDto studentDto) {
         Student student = new Student();
         student.setStudentName(studentDto.getStudentName());
         student.setStudentEmail(studentDto.getStudentEmail());
+        student.setName(studentDto.getName());
+        student.setFatherName(studentDto.getFatherName());
+        student.setNumber(studentDto.getNumber());
+        student.setBatch(studentDto.getBatch());
+        student.setAge(studentDto.getAge());
+        student.setPassOutYear(studentDto.getPassOutYear());
         student.setCreatedOn(Instant.now());
         student.setUpdatedOn(Instant.now());
         return student;

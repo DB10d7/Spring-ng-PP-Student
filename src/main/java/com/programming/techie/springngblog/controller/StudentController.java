@@ -12,13 +12,13 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController
-@RequestMapping("/api/student/")
+@RequestMapping("/api/student")
 public class StudentController {
 
     @Autowired
     private StudentService studentService;
 
-    @PostMapping
+    @PostMapping("/create")
     public ResponseEntity createPost(@RequestBody StudentDto studentDto) {
         studentService.createStudent(studentDto);
         return new ResponseEntity(HttpStatus.OK);
