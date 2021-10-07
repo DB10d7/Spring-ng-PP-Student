@@ -19,10 +19,15 @@ public class StudentController {
     private StudentService studentService;
 
     @PostMapping("/create")
-    public ResponseEntity createPost(@RequestBody StudentDto studentDto) {
+    public ResponseEntity createStudent(@RequestBody StudentDto studentDto) {
         studentService.createStudent(studentDto);
         return new ResponseEntity(HttpStatus.OK);
     }
+   /* @PostMapping("/update")
+    public ResponseEntity updateStudent(@RequestBody StudentDto studentDto) {
+        studentService.createStudent(studentDto);
+        return new ResponseEntity(HttpStatus.OK);
+    } */
     @GetMapping("/all")
     public ResponseEntity<List<StudentDto>> showAllStudent() {
         return new ResponseEntity<>(studentService.showAllStudent(), HttpStatus.OK);
