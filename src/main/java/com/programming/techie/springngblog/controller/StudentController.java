@@ -23,11 +23,11 @@ public class StudentController {
         studentService.createStudent(studentDto);
         return new ResponseEntity(HttpStatus.OK);
     }
-   /* @PostMapping("/update")
+    @PutMapping("/update")
     public ResponseEntity updateStudent(@RequestBody StudentDto studentDto) {
-        studentService.createStudent(studentDto);
+        studentService.updateStudent(studentDto);
         return new ResponseEntity(HttpStatus.OK);
-    } */
+    }
     @GetMapping("/all")
     public ResponseEntity<List<StudentDto>> showAllStudent() {
         return new ResponseEntity<>(studentService.showAllStudent(), HttpStatus.OK);
@@ -35,5 +35,9 @@ public class StudentController {
     @GetMapping("/get/{id}")
     public ResponseEntity<StudentDto> getSingleStudent(@PathVariable @RequestBody Long id) {
         return new ResponseEntity<>(studentService.readSingleStudent(id), HttpStatus.OK);
+    }
+    @DeleteMapping("/delete/{id}")
+    public String deleteStudent(@PathVariable @RequestBody Long id) {
+        return (studentService.deleteStudent(id));
     }
 }

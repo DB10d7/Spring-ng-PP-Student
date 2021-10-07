@@ -1,7 +1,7 @@
 package com.programming.techie.springngblog.service;
 
 import com.programming.techie.springngblog.dto.StudentDto;
-import com.programming.techie.springngblog.exception.PostNotFoundException;
+import com.programming.techie.springngblog.exception.StudentNotFoundException;
 import com.programming.techie.springngblog.model.Student;
 import com.programming.techie.springngblog.repository.StudentRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -28,7 +28,7 @@ public class StudentService {
     }
     @Transactional
     public StudentDto readSingleStudent(Long id) {
-        Student student = studentRepository.findById(id).orElseThrow(() -> new PostNotFoundException("For id " + id));
+        Student student = studentRepository.findById(id).orElseThrow(() -> new StudentNotFoundException("For id " + id));
         return mapFromStudentToDto(student);
     }
     @Transactional
@@ -62,6 +62,25 @@ public class StudentService {
         student.setCreatedOn(Instant.now());
         student.setUpdatedOn(Instant.now());
         return student;
+    }
+    @Transactional
+    public String deleteStudent(Long id) {
+        studentRepository.deleteById(id);
+        return "Student removed !! ";
+    }
+    @Transactional
+    public void updateStudent(StudentDto studentDto) {
+        Student student = studentRepository.findById(studentDto.getStudentId()).orElse(null);
+        student.setStudentName(studentDto.getStudentName());
+        student.setStudentEmail(studentDto.getStudentEmail());
+        student.setName(studentDto.getName());
+        student.setFatherName(studentDto.getFatherName());
+        student.setNumber(studentDto.getNumber());
+        student.setBatch(studentDto.getBatch());
+        student.setAge(studentDto.getAge());
+        student.setPassOutYear(studentDto.getPassOutYear());
+        student.setUpdatedOn(Instant.now());
+        studentRepository.save(student);
     }
 
 }
