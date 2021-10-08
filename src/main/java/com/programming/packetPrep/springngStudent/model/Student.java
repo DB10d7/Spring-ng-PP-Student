@@ -20,6 +20,9 @@ public class Student {
     @NotBlank
     @Column
     private String fatherName;
+
+
+
     @NotNull
     @Column
     private Long number;
@@ -44,6 +47,8 @@ public class Student {
     private Instant createdOn;
     @Column
     private Instant updatedOn;
+    @Column
+    private String password;
 
     public Long getStudentId() {
         return studentId;
@@ -117,19 +122,33 @@ public class Student {
         this.name = name;
     }
 
-    public int getAge() {
+
+    public Integer getAge() {
         return age;
     }
 
-    public void setAge(int age) {
-        this.age = age;
-    }
-
-    public int getPassOutYear() {
+    public Integer getPassOutYear() {
         return passOutYear;
     }
 
-    public void setPassOutYear(int passOutYear) {
+    public void setAge(Integer age) {
+        this.age = age;
+    }
+
+    public void setPassOutYear(Integer passOutYear) {
         this.passOutYear = passOutYear;
     }
+
+    public String getPassword() {
+        return password;
+    }
+
+    public void setPassword(String password) {
+        this.password = password;
+    }
+
+
+
+
+
 }

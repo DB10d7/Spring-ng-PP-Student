@@ -23,6 +23,11 @@ public class StudentController {
         studentService.createStudent(studentDto);
         return new ResponseEntity(HttpStatus.OK);
     }
+    @PostMapping("/signup")
+    public ResponseEntity signupStudent(@RequestBody StudentDto studentDto) {
+        studentService.createStudent(studentDto);
+        return new ResponseEntity(HttpStatus.OK);
+    }
     @PutMapping("/update")
     public ResponseEntity updateStudent(@RequestBody StudentDto studentDto) {
         studentService.updateStudent(studentDto);

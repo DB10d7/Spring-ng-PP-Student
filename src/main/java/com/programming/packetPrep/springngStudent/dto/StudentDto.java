@@ -10,6 +10,8 @@ public class StudentDto {
     private Long number;
     private String batch;
     private Integer passOutYear;
+    private String password;
+
 
 
     public Long getStudentId() {
@@ -82,5 +84,13 @@ public class StudentDto {
 
     public void setPassOutYear(Integer passOutYear) {
         this.passOutYear = passOutYear;
+    }
+
+    public String getPassword() {
+        return password;
+    }
+
+    public void setPassword(String password) {
+        this.password = password;
     }
 }
